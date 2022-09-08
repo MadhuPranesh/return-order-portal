@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <div class="d-flex" style="justify-content: center">
+    <form #form="ngForm" (ngSubmit)="OnSubmit(form)">
+      <div class="d-flex et flex-column" style="align-items: center">
+        <div>
+          <img
+            src="../../assets/images/logo.gif"
+            width="150px"
+            height="100px"
+          />
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="form-control"
+            name="userName"
+            ngModel
+            placeholder="Enter your Username"
+            required
+          />
+        </div>
+        <div class="col-9">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Enter your Password"
+            ngModel
+            required
+          />
+        </div>
+        <div *ngIf="!isLoading" class="col-9">
+          <div class="d-flex" style="gap: 20px">
+            <button class="btn btn-primary">LOGIN</button>
+            <div *ngIf="message" style="color: yellow; padding-top: 5px">
+              Invalid Credentials!!!
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isLoading">
+          <h2>Loading</h2>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div
+    class="a"
+    class="alert alert-danger"
+    role="alert"
+    *ngIf="servererror"
+    style="margin-top: 10px; margin-left: 270px; width: 400px"
+  >
+    <div>Some thing went wrong!!! Please try again later...</div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.et {
+  gap: 15px;
+  padding: 20px;
+}
+.logincontainer {
+  align-items: center;
+  justify-content: center;
+}
+form {
+  background-color: black;
+  width: 400px;
+}
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

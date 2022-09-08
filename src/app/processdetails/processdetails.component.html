@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="container">
+  <div class="d-flex flex-column" style="padding: 30px">
+    <div class="row">
+      <div class="col">Request ID</div>
+      <div class="col">{{ processDetails.processRequestId }}</div>
+    </div>
+    <div class="row">
+      <div class="col">Processing Charge</div>
+      <div class="col">{{ processDetails.processingCharge }}</div>
+    </div>
+    <div class="row">
+      <div class="col">Packagaing & Delivery Charge</div>
+      <div class="col">{{ processDetails.packagingAndDeliveryCharge }}</div>
+    </div>
+    <div class="row">
+      <div class="col">Date of Delivery</div>
+      <div class="col">{{ processDetails.dateOfDelivery }}</div>
+    </div>
+    <div class="row">
+      <button class="btn btn-success" (click)="proceedToConfirm()">
+        Proceed
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container" style="background-color: white">
+  <div *ngIf="response">
+    <div class="alert alert-success">{{ message }}</div>
+  </div>
+  <div *ngIf="responseError">
+    <div class="alert alert-danger">{{ message }}</div>
+  </div>
+</div>

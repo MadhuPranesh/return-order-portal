@@ -1,0 +1,185 @@
+<app-header></app-header>
+<div class="container">
+  <form (ngSubmit)="onSubmit(returnDetails)" #returnDetails="ngForm">
+    <div class="d-flex flex-column">
+      <div class="row">
+        <div class="col"><label for="username">Name</label></div>
+        <div class="col">
+          <div class="d-flex">
+            <input
+              type="text"
+              name="userName"
+              id="username"
+              ngModel
+              required
+              class="form-control"
+              #localrefuserName="ngModel"
+            />
+            <div
+              class="help-block"
+              *ngIf="!localrefuserName.valid && localrefuserName.touched"
+              style="color: red"
+            >
+              Please enter a valid user name
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><label for="mobile">Contact Number</label></div>
+        <div class="col">
+          <div class="d-flex">
+            <div>
+              <input
+                type="tel"
+                name="contactNumber"
+                id="mobile"
+                class="form-control"
+                pattern="[0-9]{10}"
+                ngModel
+                #localrefcn="ngModel"
+                required
+              />
+            </div>
+            <div
+              *ngIf="!localrefcn.valid && localrefcn.touched"
+              class="help-block"
+              style="color: red"
+            >
+              Please enter a valid mobile number
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><label for="mobile">Component Type</label></div>
+        <div class="col">
+          <select
+            [ngModel]="componentType"
+            name="componentType"
+            id="integral"
+            value="integral"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option name="componentType" value="accessory" selected>
+              Accessory
+            </option>
+            <option name="componentType" value="integral">Integral</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><label for="mobile">Component Name</label></div>
+        <div class="col">
+          <div class="d-flex">
+            <div>
+              <input
+                type="text"
+                name="componentName"
+                id="mobile"
+                class="form-control"
+                ngModel
+                #localrefcomponentName="ngModel"
+                required
+              />
+            </div>
+            <div
+              class="help-block"
+              *ngIf="
+                !localrefcomponentName.valid && localrefcomponentName.touched
+              "
+              style="color: red"
+            >
+              Please enter a component name
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Priority Process</label></div>
+        <div class="col">
+          <select
+            [ngModel]="isPriorityOne"
+            name="isPriorityOne"
+            id="yes"
+            value="yes"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option value="yes" selected>Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Return / Replace</label></div>
+        <div class="col">
+          <select
+            [ngModel]="replaceOrReturn"
+            name="replaceOrReturn"
+            id="return"
+            value="return"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option value="return" selected>Return</option>
+            <option value="replace">Replace</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="noOfComponents">Defective Count</label>
+        </div>
+        <div class="col">
+          <div class="d-flex">
+            <div>
+              <input
+                type="number"
+                name="noOfComponents"
+                class="form-control"
+                id="noOfComponents"
+                ngModel
+                required
+                #localrefcompocount="ngModel"
+                min="1"
+              />
+            </div>
+
+            <div
+              class="help-block"
+              *ngIf="!localrefcompocount.valid && localrefcompocount.touched"
+              style="color: red"
+            >
+              Please enter a valid count
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><label for="username">Defective details</label></div>
+        <div class="col">
+          <textarea
+            name="defectiveDetails"
+            id="details"
+            ngModel
+            class="form-control"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div *ngIf="servererror" class="alert alert-danger">
+            {{ message }}
+          </div>
+        </div>
+        <div class="col" style="text-align: left">
+          <button class="btn btn-success" [disabled]="!returnDetails.valid">
+            Submit Request
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

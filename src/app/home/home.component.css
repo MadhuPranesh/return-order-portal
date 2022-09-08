@@ -1,0 +1,60 @@
+/* .alert {
+  font-size: 0.7rem;
+  float: right;
+}
+.container {
+  margin-top: 20px;
+}
+.eg {
+  align-items: center;
+  justify-content: space-around;
+}
+.et {
+  gap: 15px;
+  padding: 20px;
+}
+*/
+.d-flex {
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  gap: 10px;
+}
+.container {
+  width: 800px;
+  margin-top: 10px;
+}
+.col {
+  text-align: center;
+}
+form {
+  font-size: 16px;
+  color: white;
+  background-color: darkcyan;
+}
+.help-block {
+  font-size: 12px;
+}
+input,
+select {
+  width: 200px;
+}
+textarea {
+  width: 300px;
+}
+/* .container {
+  width: 100%;
+} */
+/* 
+input.ng-touched:invalid {
+  border: 1px solid red;
+}
+input.ng-touched:valid {
+  border: 1px solid green;
+}
+span {
+  padding: 3px;
+  font-size: 9px;
+}
+label {
+  font-size: 16px;
+}  */
